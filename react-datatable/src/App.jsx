@@ -107,7 +107,7 @@ export default function App() {
   };
   return (
     <div>
-      <input className="search" type="text" onChange={handleChange} />
+      <input className="search" type="text" onChange={handleChange} />{" "}
       <FontAwesomeIcon icon={faMagnifyingGlass} />
       <DataTable
         title="User Data"
