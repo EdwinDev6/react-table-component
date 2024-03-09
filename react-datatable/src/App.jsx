@@ -1,7 +1,7 @@
 import DataTable from "react-data-table-component";
 import { useState } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 export default function App() {
   const columns = [
     {
@@ -9,12 +9,12 @@ export default function App() {
       selector: (row) => row.name,
       sortable: true,
     },
-  
+
     {
       name: "last Name",
       selector: (row) => row.lastName,
     },
-  
+
     {
       name: "Age",
       selector: (row) => row.age,
@@ -100,16 +100,17 @@ export default function App() {
   const [records, setRecords] = useState(data);
 
   const handleChange = (e) => {
-   const filterRecords = data.filter(record => {
-    return record.name.toLowerCase().includes(e.target.value.toLowerCase())
-   }) 
-   setRecords(filterRecords)
-  }
+    const filterRecords = data.filter((record) => {
+      return record.name.toLowerCase().includes(e.target.value.toLowerCase());
+    });
+    setRecords(filterRecords);
+  };
   return (
     <div>
-      <input className="search" type="text" onChange={handleChange}/> <FontAwesomeIcon icon={faMagnifyingGlass} />
+      <input className="search" type="text" onChange={handleChange} />{" "}
+      <FontAwesomeIcon icon={faMagnifyingGlass} />
       <DataTable
-      title="User Data"
+        title="User Data"
         columns={columns}
         data={records}
         selectableRows
